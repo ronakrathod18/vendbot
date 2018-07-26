@@ -1,0 +1,43 @@
+﻿body {
+    background: #000;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+img {
+    max-width: 100%;
+}
+
+.vend {
+    box-shadow: 0 0 23px 0 rgba(101, 104, 120, 0.25);
+    margin: 30px auto;
+    padding: 20px;
+    width: 640px;
+    clear: both;
+    background: silver;
+}
+
+.vend-column {
+    width: 24%;
+    height: 150px;
+    float: left;
+    box-shadow: 0 0 23px 0 rgba(101, 104, 120, 0.25);
+    margin: 3px;
+    background: white;
+}
+
+.vend-image {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 15px auto;
+    border-radius: 50%;
+}
