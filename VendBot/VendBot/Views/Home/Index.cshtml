@@ -1,11 +1,17 @@
-﻿@{
+﻿@model IList<VendBot.Models.Item>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    @foreach(var item in Model)
+    {
+        <p>Id: @item.Id</p>
+        <p>Type: @item.Type</p>
+        <p>Name: @item.Name</p>
+        <p>Quantity: @item.Quantity</p>
+    }
 </div>
 
 <div class="row">

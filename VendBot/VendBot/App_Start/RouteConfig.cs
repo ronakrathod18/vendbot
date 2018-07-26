@@ -14,6 +14,28 @@ namespace VendBot
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "GetItem",
+                "getItem/{type}/{id}",
+                new
+                {
+                    controller = "Home",
+                    action = "GetItem",
+                    type = UrlParameter.Optional,
+                    id = UrlParameter.Optional
+                });
+
+            routes.MapRoute(
+                "StockItem",
+                "stockItem/{type}/{id}/{count}",
+                new
+                {
+                    controller = "Home",
+                    action = "StockItem",
+                    type = UrlParameter.Optional,
+                    id = UrlParameter.Optional
+                });
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

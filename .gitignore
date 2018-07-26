@@ -1,0 +1,10 @@
+bin/
+obj/
+packages/
+.vs/
+.sass-cache/
+*.orig
+*.dbmdl
+*.jfm
+*.user
+*.log
