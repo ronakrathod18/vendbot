@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "Home Page";
-    int columns = 16;
 }
 
 <link rel="stylesheet" href="~/Styles/vend.css"/>
@@ -10,16 +9,18 @@
 <div class="row">
     <div class="vend clearfix">
         <!-- 4 x 4 grid-->
-        @foreach(var item in Model)
+        @foreach (var item in Model)
         {
             <div class="vend-column">
-                <!--image-->
-                <!--Id-->
-                <div id="vend-item-id">@item.Id</div>
-                <div id="vend-item-name">@item.Name</div>
-                <div id="vend-item-quantity">Quantity left: @item.Quantity</div>
-                <!--Counter-->
+                <img class="vend-item-image" src="@item.Image" alt="@item.Name" />
+                @*<div class="vend-item-id">@item.Id</div>*@
+                @*<div class="vend-item-name">@item.Name</div>*@
+                <div class="@(@item.Quantity < 20 ? "notok" : "ok") vend-item-quantity">@item.Quantity</div>
             </div>
         }
     </div>
 </div>
+
+<script>
+    setTimeout(function () { location.reload(1); }, 5000);
+</script>

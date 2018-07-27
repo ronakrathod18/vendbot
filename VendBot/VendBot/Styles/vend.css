@@ -27,31 +27,53 @@ img {
 
 .vend-column {
     width: 24%;
-    height: 150px;
+    height: 165px;
     float: left;
     box-shadow: 0 0 23px 0 rgba(101, 104, 120, 0.25);
     margin: 3px;
     background: white;
     text-align: center;
     padding: 10px 0;
+    position: relative;
 }
 
-.vend-image {
-    width: 100px;
-    height: 100px;
-    display: block;
-    margin: 15px auto;
-    border-radius: 50%;
+.vend-item-image {
+    max-height: 85px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 11px;
+    margin: auto;
+    padding: 0 15px;
 }
 
 .vend-item-id {
-
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 8px;
 }
 
 .vend-item-name {
-
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
 }
 
 .vend-item-quantity {
-
+    display: inline-block;
+    background: lightgreen;
+    color: white;
+    padding: 8px 12px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 12px;
+}
+.vend-item-quantity.notok {
+    background: lightcoral;
 }
