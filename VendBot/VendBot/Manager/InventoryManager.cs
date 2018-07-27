@@ -35,7 +35,8 @@ namespace VendBot.Controllers
                                 Id = reader["Id"] != System.DBNull.Value ? Convert.ToInt32(reader["Id"]) : 0,
                                 Type = reader["Type"] != System.DBNull.Value ? reader["Type"].ToString() : string.Empty,
                                 Name = reader["Name"] != System.DBNull.Value ? reader["Name"].ToString() : string.Empty,
-                                Quantity = reader["Quantity"] != System.DBNull.Value ? Convert.ToInt32(reader["Quantity"]) : 0
+                                Quantity = reader["Quantity"] != System.DBNull.Value ? Convert.ToInt32(reader["Quantity"]) : 0,
+                                Image = reader["Image"] != System.DBNull.Value ? reader["Image"].ToString() : "http://images.agoramedia.com/wte3.0/gcms/lemon_bigger.jpg"
                             };
 
                             vendingMachine.Add(item);
