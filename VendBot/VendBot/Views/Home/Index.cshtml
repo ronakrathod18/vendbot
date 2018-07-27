@@ -5,27 +5,19 @@
     int columns = 16;
 }
 
-<div class="jumbotron">
-    @foreach(var item in Model)
-    {
-        <p>Id: @item.Id</p>
-        <p>Type: @item.Type</p>
-        <p>Name: @item.Name</p>
-        <p>Quantity: @item.Quantity</p>
-    }
-</div>
-
 <link rel="stylesheet" href="~/Styles/vend.css"/>
 
 <div class="row">
     <div class="vend clearfix">
         <!-- 4 x 4 grid-->
-        @for (var i = 0; i < columns; i++)
+        @foreach(var item in Model)
         {
             <div class="vend-column">
                 <!--image-->
-                <img class="vend-image" src="http://images.agoramedia.com/wte3.0/gcms/lemon_bigger.jpg" alt="item-image" />
                 <!--Id-->
+                <div id="vend-item-id">@item.Id</div>
+                <div id="vend-item-name">@item.Name</div>
+                <div id="vend-item-quantity">Quantity left: @item.Quantity</div>
                 <!--Counter-->
             </div>
         }
