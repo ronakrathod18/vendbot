@@ -1,4 +1,4 @@
-﻿@using System.IO;
+﻿@model IList<VendBot.Models.Item>
 
 @{
     ViewBag.Title = "Home Page";
@@ -6,6 +6,16 @@
     var fileList = Directory.GetFiles("/hackathon/vendbot-1/VendBot/VendBot/Images");
     var path = "Images/";
 }
+
+<div class="jumbotron">
+    @foreach(var item in Model)
+    {
+        <p>Id: @item.Id</p>
+        <p>Type: @item.Type</p>
+        <p>Name: @item.Name</p>
+        <p>Quantity: @item.Quantity</p>
+    }
+</div>
 
 <link rel="stylesheet" href="~/Styles/vend.css"/>
 
