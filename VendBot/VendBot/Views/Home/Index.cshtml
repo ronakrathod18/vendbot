@@ -1,6 +1,10 @@
-﻿@{
+﻿@using System.IO;
+
+@{
     ViewBag.Title = "Home Page";
     int columns = 16;
+    var fileList = Directory.GetFiles("/hackathon/vendbot-1/VendBot/VendBot/Images");
+    var path = "Images/";
 }
 
 <link rel="stylesheet" href="~/Styles/vend.css"/>
@@ -9,10 +13,10 @@
     <div class="vend clearfix">
         <!-- 4 x 4 grid-->
         @for (var i = 0; i < columns; i++)
-        {
+                {
             <div class="vend-column">
                 <!--image-->
-                <img class="vend-image" src="http://images.agoramedia.com/wte3.0/gcms/lemon_bigger.jpg" alt="item-image" />
+                <img src="@(path + Path.GetFileName(fileList[i]))" />
                 <!--Id-->
                 <!--Counter-->
             </div>
