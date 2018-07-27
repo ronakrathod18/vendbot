@@ -3,31 +3,46 @@
 @{
     ViewBag.Title = "Home Page";
     int columns = 16;
+    var fileList = Directory.GetFiles("/hackathon/vendbot-1/VendBot/VendBot/Images");
+    var path = "Images/";
+    int n = 0;
 }
 
 <div class="jumbotron">
     @foreach(var item in Model)
     {
+
+        @*@if ((n % 4) == 0)
+        {
+    <div class="row">
+        }*@
+    <div class="box">
         <p>Id: @item.Id</p>
         <p>Type: @item.Type</p>
         <p>Name: @item.Name</p>
         <p>Quantity: @item.Quantity</p>
-    }
-</div>
-
-<link rel="stylesheet" href="~/Styles/vend.css"/>
-
-<div class="row">
-    <div class="vend clearfix">
-        <!-- 4 x 4 grid-->
-        @for (var i = 0; i < columns; i++)
-        {
-            <div class="vend-column">
-                <!--image-->
-                <img class="vend-image" src="http://images.agoramedia.com/wte3.0/gcms/lemon_bigger.jpg" alt="item-image" />
-                <!--Id-->
-                <!--Counter-->
-            </div>
-        }
+        <img src="@(path + item.Id + "_" + item.Name + ".jpg")" />
     </div>
-</div>
+        @*@if ((n % 4) == 0)
+    {
+            </div>
+            }*@
+            }
+        </div>
+
+        <link rel="stylesheet" href="~/Styles/vend.css" />
+
+        <div class="row">
+            <div class="vend clearfix">
+                <!-- 4 x 4 grid-->
+                @for (var i = 0; i < columns; i++)
+            {
+                <div class="vend-column">
+                    <!--image-->
+                    <img src="@(path + Path.GetFileName(fileList[i]))" />
+                    <!--Id-->
+                    <!--Counter-->
+                </div>
+        }
+            </div>
+        </div>
